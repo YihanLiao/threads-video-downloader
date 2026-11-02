@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f5f0">
+  <meta name="description" content="貼上公開 Threads 貼文網址，解析影片與圖片，逐一預覽或打包下載。">
+  <title>Threadsave — Threads 影片下載</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="Threadsave 首頁"><span class="brand-icon">↧</span> threadsave<span class="brand-dot">.</span></a><a class="help-link" href="#how">使用說明 <span aria-hidden="true">↗</span></a></header>
+  <main>
+    <section class="intro"><div class="eyebrow"><span></span> THREADS MEDIA DOWNLOADER</div><h1>留住你想重看的<span>每個片刻。</span></h1><p>一個連結，收藏整篇貼文的影片與圖片。<br>貼上公開 Threads 網址，剩下的交給我們。</p></section>
+    <section class="workspace" aria-labelledby="input-title">
+      <form id="resolve-form">
+        <div class="section-heading"><h2 id="input-title"><span class="step">01</span> 貼上貼文網址</h2><span class="small-label">最多 10 個網址</span></div>
+        <label class="sr-only" for="urls">Threads 貼文網址，每行一個</label>
+        <div class="input-wrap"><textarea id="urls" rows="4" placeholder="https://www.threads.com/@username/post/…&#10;&#10;多個網址請換行貼上" required spellcheck="false"></textarea><button type="button" id="paste" class="paste-button">貼上</button></div>
+        <div class="form-bottom"><span class="input-hint">↳ 支援 threads.com 與 threads.net 公開貼文</span><button id="resolve" class="button primary" type="submit">解析網址 <span aria-hidden="true">↗</span></button></div>
+      </form>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+      <div id="errors" class="errors" hidden></div>
+      <section class="queue" aria-labelledby="queue-title">
+        <div class="queue-heading"><h2 id="queue-title"><span class="step">02</span> 下載列表 <span id="count" class="count">0</span></h2><button id="clear" class="text-button" type="button" disabled>清除列表</button></div>
+        <div class="queue-toolbar"><label class="select-label"><input id="select-all" type="checkbox" disabled> 全選 <span id="selected-count">0 個已選取</span></label><button id="zip" class="button secondary" type="button" disabled>↓ 打包下載 ZIP</button></div>
+        <div id="empty" class="empty"><div class="empty-icon" aria-hidden="true">↧</div><h3>你的收藏，從一個連結開始</h3><p>解析後，影片和圖片會出現在這裡。<br>多段影片將各自列出，方便個別下載。</p></div>
+        <div id="results" class="results"></div>
+        <div class="queue-footer"><span class="live-dot"></span> 檔案按需產生，暫存 30 分鐘後自動清除。<span class="file-limit">單檔上限 100 MB</span></div>
+      </section>
+    </section>
+    <section id="how" class="how"><div class="how-title"><span class="eyebrow">SIMPLE BY DESIGN</span><h2>三步，就能帶走。</h2></div><div class="how-step"><span>01 /</span><h3>複製貼文連結</h3><p>在 Threads 點選分享，複製公開貼文的網址。</p></div><div class="how-step"><span>02 /</span><h3>貼上並解析</h3><p>自動整理貼文中的影片與圖片，多段媒體分別列出。</p></div><div class="how-step"><span>03 /</span><h3>選擇並下載</h3><p>個別儲存，或選取多個檔案打包下載 ZIP。</p></div></section>
+    <aside class="note"><span aria-hidden="true">ⓘ</span><p>僅支援可公開存取的貼文，不支援私人帳號或需要登入的內容。請尊重創作者，僅下載你有權使用的內容。</p></aside>
+  </main>
+  <footer><a class="brand" href="/">threadsave.</a><span>Made for the moments worth keeping.</span><span>與 Meta / Threads 無關聯</span></footer>
+</body>
+</html>
